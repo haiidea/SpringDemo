@@ -1,2 +1,3 @@
 rootProject.name = 'springbootdemo'
+include 'StudentDemo'
 

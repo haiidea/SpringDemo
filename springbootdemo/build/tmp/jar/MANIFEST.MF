@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Class-Path:  lib//spring-boot-starter-web-1.5.10.RELEASE.jar lib//spri
+ ng-boot-starter-1.5.10.RELEASE.jar lib//spring-boot-starter-tomcat-1.
+ 5.10.RELEASE.jar lib//hibernate-validator-5.3.6.Final.jar lib//jackso
+ n-databind-2.8.10.jar lib//spring-webmvc-4.3.14.RELEASE.jar lib//spri
+ ng-web-4.3.14.RELEASE.jar lib//spring-boot-autoconfigure-1.5.10.RELEA
+ SE.jar lib//spring-boot-1.5.10.RELEASE.jar lib//spring-boot-starter-l
+ ogging-1.5.10.RELEASE.jar lib//spring-context-4.3.14.RELEASE.jar lib/
+ /spring-aop-4.3.14.RELEASE.jar lib//spring-beans-4.3.14.RELEASE.jar l
+ ib//spring-expression-4.3.14.RELEASE.jar lib//spring-core-4.3.14.RELE
+ ASE.jar lib//snakeyaml-1.17.jar lib//tomcat-embed-websocket-8.5.27.ja
+ r lib//tomcat-embed-core-8.5.27.jar lib//tomcat-embed-el-8.5.27.jar l
+ ib//validation-api-1.1.0.Final.jar lib//jboss-logging-3.3.0.Final.jar
+  lib//classmate-1.3.1.jar lib//jackson-annotations-2.8.0.jar lib//jac
+ kson-core-2.8.10.jar lib//logback-classic-1.1.11.jar lib//jcl-over-sl
+ f4j-1.7.25.jar lib//jul-to-slf4j-1.7.25.jar lib//log4j-over-slf4j-1.7
+ .25.jar lib//commons-logging-1.2.jar lib//tomcat-annotations-api-8.5.
+ 27.jar lib//logback-core-1.1.11.jar lib//slf4j-api-1.7.25.jar
+Main-Class: com.haiidea.MainApp
+
