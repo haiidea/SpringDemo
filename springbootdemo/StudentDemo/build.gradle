@@ -17,7 +17,7 @@ dependencies {
 }
 jar{
     String someStr=''
-    configurations.runtime.each{someStr=someStr+" lib//"+it.name}
+    configurations.runtime.each{someStr=someStr+" lib://"+it.name}
     manifest{
         attributes 'Main-Class':'com.haiidea.MainApp'
         attributes 'Class-Path':someStr
