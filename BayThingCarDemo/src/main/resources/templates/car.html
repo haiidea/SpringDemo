@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www/thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h2>购物车</h2>
+    <table>
+        <thead>
+            <td width="100px">标号</td>
+            <td width="100px">名称</td>
+            <td width="100px">价格</td>
+            <td width="100px">数量</td>
+            <td width="100px">小计</td>
+        </thead>
+        <tbody>
+        <!--entry遍历-->
+        <tr th:each="prod:${session.car}">
+            <td th:text="${prod.key.id}"></td>
+            <td th:text="${prod.key.name}"></td>
+            <td th:text="${prod.key.price}"></td>
+            <td th:text="${prod.value}"></td>
+            <td th:text="${prod.value*prod.key.price}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
