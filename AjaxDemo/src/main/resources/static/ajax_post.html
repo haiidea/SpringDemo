@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>商城</title>
+    <script type="text/javascript">
+        function AjaxFun() {
+            // 在没有jquery时使用的方式，
+            var xmlhttp
+            try {
+                xmlhttp = new XMLHttpRequest()
+            }catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP")
+                }catch (e) {
+                    try {
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP")
+                    }catch (e) {
+
+                    }
+                }
+            }
+            return xmlhttp
+        }
+        function post() {
+            var http = AjaxFun()
+            // 执行请求方法，请求路径，执行异步
+            http.open("post","ajaxpost",true)
+            //设置数据
+            http.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+            //请求状态改变就会触发回调
+            //1.请求未初始化，
+            //2. 服务器连接已建立，
+            // 3.请求已接收，
+            // 4.请求处理中，请求已完成且响应已就绪
+            http.onreadystatechange=function () {
+                if(http.readyState == 4 && http.status==200){
+                    var text=http.responseText;
+                    alert(text)
+                }
+            }
+            http.send("name=admin&pw=123")
+        }
+    </script>
+</head>
+<body>
+
+<!--不刷新页面，直接执行一个js方法-->
+    <a href="javascript:post()">ajax post请求</a>
+</body>
+</html>

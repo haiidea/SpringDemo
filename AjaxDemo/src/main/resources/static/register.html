@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function AjaxFun() {
+            // 在没有jquery时使用的方式，
+            var xmlhttp
+            try {
+                xmlhttp = new XMLHttpRequest()
+            }catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP")
+                }catch (e) {
+                    try {
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP")
+                    }catch (e) {
+
+                    }
+                }
+            }
+            return xmlhttp
+        }
+        function checkUserName() {
+            var  username = document.getElementById("username").value
+            var http = AjaxFun()
+            // 执行请求方法，请求路径，执行异步
+            http.open("post","user_register",true)
+            //设置数据
+            http.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+            //请求状态改变就会触发回调
+            //1.请求未初始化，
+            //2. 服务器连接已建立，
+            // 3.请求已接收，
+            // 4.请求处理中，请求已完成且响应已就绪
+            http.onreadystatechange=function () {
+                if(http.readyState == 4 && http.status==200){
+                    var text=http.responseText;
+                    var result = document.getElementById("result")
+
+                    if ("use" == text) {
+                        result.innerHTML="<font color='red'>用户名已被占用</font>"
+                  }else {
+                        result.innerHTML="<font color='green'>用户名可以使用</font>"
+                    }
+                }
+            }
+            http.send("name="+username)
+        }
+    </script>
+</head>
+<body>
+    <form action="checkUserName">
+        用户名：<input type="text" id="username" name="username" onblur="checkUserName()"><span id="result"></span><br>
+        密码：<input type="password" name="pw"><br>
+        <input type="submit" value="注册">
+    </form>
+</body>
+</html>

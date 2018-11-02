@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>商城</title>
+    <script type="text/javascript">
+        function AjaxFun() {
+            // 在没有jquery时使用的方式，
+            var xmlhttp
+            try {
+                xmlhttp = new XMLHttpRequest()
+            }catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP")
+                }catch (e) {
+                    try {
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP")
+                    }catch (e) {
+
+                    }
+                }
+            }
+            return xmlhttp
+        }
+        function get() {
+            alert("get")
+            var http = AjaxFun()
+            // 执行请求方法，请求路径，执行异步
+            http.open("get","ajaxget",true)
+            http.send()
+        }
+    </script>
+</head>
+<body>
+<!--href会刷新页面-->
+    <a href="#" onclick="get()">ajax请求</a><br>
+<!--不刷新页面，直接执行一个js方法-->
+    <a href="javascript:get()">ajax请求</a>
+</body>
+</html>

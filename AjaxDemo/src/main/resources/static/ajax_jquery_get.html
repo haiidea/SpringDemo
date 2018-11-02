@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>商城</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        function get() {
+            // $.get("jqueryget")
+            //status 请求状态不是状态码，很少用，可以去掉
+            //参数一返回数据
+            $.get("jqueryget?usernmae=admin",function(data,status) {
+                alert(data+"  "+status)
+            })//带参数
+        }
+
+    </script>
+</head>
+<body>
+    <a href="javascript:get()">jquery请求</a>
+</body>
+</html>

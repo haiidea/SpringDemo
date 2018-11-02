@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>商城</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        function post() {
+            // $.get("jqueryget")
+            //status 请求状态不是状态码，很少用，可以去掉
+            //参数一返回数据
+            //参数二是请求数据，可以不写，需要的话可以试下面的格式，也可以是json格式，key,value都用双引号，数字可以不用
+            $.post("jquerypost",{usename:"admin",pw:"123","age":23},function(data) {
+                alert(data)
+            })//带参数
+        }
+        function ajaxpost() {
+            $.ajax({url:"jquery_ajax_post",data:{usename:"admin",pw:"123","age":23},
+                success:function (data) {
+                    alert(data)
+                },
+                error:function (data) {
+
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<a href="javascript:post()">jquery请求</a><br>
+<a href="javascript:ajaxpost()">jquery的ajax请求</a>
+</body>
+</html>
