@@ -2,10 +2,7 @@ package com.haiidea;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Properties;
 
 public class util {
@@ -37,12 +34,18 @@ public class util {
         return connection;
     }
     public static void close(Statement statement, Connection connection){
+        close(statement,connection,null);
+    }
+    public static void close(Statement statement, Connection connection,ResultSet resultSet){
         try {
             if(statement!=null) {
                 statement.close();
             }
             if (connection!=null){
                 connection.close();
+            }
+            if (resultSet!=null){
+                resultSet.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
