@@ -1,9 +1,6 @@
 package com.haiidea;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Test {
     @org.junit.Test
@@ -25,6 +22,28 @@ public class Test {
             util.close(statement,connect);
         }
     }
+
+    @org.junit.Test
+    public void query2(){
+        Connection connect = util.getConnect();
+        PreparedStatement preparedStatement= null;
+        ResultSet resultSet = null;
+        try {
+             preparedStatement = connect.prepareStatement("select * from student where id=?");
+            preparedStatement.setString(1,"2");
+            resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                String id = resultSet.getString("id");
+                String name = resultSet.getString("name");
+                String age = resultSet.getString("age");
+                System.out.println("id="+id+"   name="+name+"  age="+age);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            util.close(preparedStatement,connect,resultSet);
+        }
+    }
+
     @org.junit.Test
     public void save(){
         Connection connect = util.getConnect();
