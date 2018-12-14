@@ -1,4 +1,5 @@
 rootProject.name = 'jdbc_demo'
 include 'JdbcUtilDemo'
 findProject(':JdbcUtilDemo')?.name = 'jdbcUtilDemo'
+include 'transferDemo'
 
