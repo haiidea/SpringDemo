@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<c3p0-config>
+    <default-config>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql:///itcast</property>
+        <property name="user">root</property>
+        <property name="password">root</property>
+
+        <property name="initialPoolSize">10</property>
+        <!--最大空闲时间，超过这个时间，重置链接对象-->
+        <property name="maxIdleTime">30</property>
+        <property name="maxPoolSize">100</property>
+        <!--回收到最小的数量-->
+        <property name="minPoolSize">10</property>
+        <!--一个链接最大只能执行的语句数，一般就一个-->
+        <property name="maxStatements">200</property>
+    </default-config>
+</c3p0-config>
