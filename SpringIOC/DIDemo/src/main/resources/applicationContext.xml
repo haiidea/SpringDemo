@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--<bean id="us" class="com.haiidea.service.impl.UserServiceImpl">-->
+        <!--<constructor-arg name="addr" value="shenz"></constructor-arg>-->
+    <!--</bean>-->
+    <!--<bean id="us" class="com.haiidea.service.impl.UserServiceImpl02">-->
+        <!--<property name="addr" value="北京"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="us" class="com.haiidea.service.impl.UserServiceImpl03">-->
+        <!--<property name="addr">-->
+            <!--<array>-->
+                <!--<value>北京</value>-->
+                <!--<value>蛇阵</value>-->
+                <!--<value>北京</value>-->
+            <!--</array>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+    <!--<bean id="us" class="com.haiidea.service.impl.UserServiceImpl04">-->
+        <!--<property name="addr">-->
+            <!--<list>-->
+                <!--<value>北京</value>-->
+                <!--<value>北京</value>-->
+                <!--<value>北京</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+<!--注入map-->
+    <!--<bean id="us" class="com.haiidea.service.impl.UserServiceImpl05">-->
+        <!--<property name="addr">-->
+            <!--<map>-->
+                <!--<entry key="01" value="北京"/>-->
+                <!--<entry key="02" value="北京"/>-->
+                <!--<entry key="03" value="北京"/>-->
+            <!--</map>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+<!--注入对象-->
+    <!--<bean id="us" class="com.haiidea.service.impl.UserServiceImpl06">-->
+        <!--<property name="userDao" ref="ud"></property>-->
+    <!--</bean>-->
+    <!--<bean id="ud" class="com.haiidea.dao.impl.UserDaoImpl"></bean>-->
+
+    <!--注解的方式-->
+    <context:component-scan base-package="com.haiidea"/>
+
+    <!--//扫描这个包下的所有子包的类，哪个类上有注解，创建他得实例-->
+    <!--<context:component-scan base-package="com.haiidea"/>-->
+</beans>
