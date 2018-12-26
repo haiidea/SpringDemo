@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--//扫描这个包下的所有子包的类，哪个类上有注解，创建他得实例-->
+    <context:component-scan base-package="com.haiidea"/>
+    <!--托管拓展类和被拓展类-->
+    <!--<bean name="us" class="com.haiidea.service.impl.UserserviceImpl"/>-->
+    <!--<bean name="logger" class="com.haiidea.util.Logger"/>-->
+    <aop:config>
+        <!--&lt;!&ndash;谁要被扩展-->
+        <!--execution(* com.haiidea.service.*.*(..))-->
+        <!--* 任意返回值-->
+        <!--* 包下任意类-->
+        <!--* 类里任意方法-->
+        <!--（..）任意参数-->
+        <!--&ndash;&gt;-->
+        <aop:pointcut id="aa" expression="execution(* com.haiidea.service.impl.UserserviceImpl.*(..))"></aop:pointcut>
+        <aop:aspect ref="lg">
+            <aop:before method="log"  pointcut-ref="aa"></aop:before>
+        </aop:aspect>
+    </aop:config>
+</beans>

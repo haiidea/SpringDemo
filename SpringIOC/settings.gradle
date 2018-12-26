@@ -1,3 +1,5 @@
 rootProject.name = 'SpringIOC'
 include 'DIDemo'
+include 'PorxyDemo'
+include 'AOPDemo'
 
