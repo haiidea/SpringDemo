@@ -1,11 +1,12 @@
 package com.haiidea.bean;
 
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "ddd")
 public class User {
     private int id;
     private String name;

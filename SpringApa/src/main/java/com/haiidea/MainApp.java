@@ -19,5 +19,10 @@ public class MainApp {
         user.setAge(18);
         manager.persist(user);
         transaction.commit();
+
+        //释放资源
+        manager.close();
+
+        factory.close();
     }
 }
