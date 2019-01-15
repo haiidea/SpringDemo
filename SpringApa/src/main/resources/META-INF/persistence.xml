@@ -10,12 +10,13 @@
         <!--<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
         <!--所有表的类都加进来-->
         <class>com.haiidea.bean.User</class>
+        <class>com.haiidea.bean.Student</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mysql"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="root"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-
+            <!--自动建表 create 不管有没有表都一直新建表，update 有表就不再建表-->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <!--显示操作的sql语句-->
             <property name="hibernate.show_sql" value="true"/>
